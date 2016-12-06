@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Light Show</title>
+  </head>
+  <body ng-controller="appCtrl">
+    <div class="head">
+      <img src="./images/Logo.png" alt="" />
+      <nav>
+        <a ui-sref="home">Home</a>
+        <a ui-sref="about">About</a>
+        <a ui-sref="videos">Videos</a>
+      </nav>
+      <i ng-if="!open" class="material-icons" ng-click="openNav()">menu</i>
+      <i ng-if="open" class="material-icons" ng-click="closeNav()">close</i>
+    </div>
+    <div id="drop-down-container">
+      <nav class="drop-down-nav">
+        <a ui-sref="home" ng-click="closeNav()">Home</a>
+        <a ui-sref="about" ng-click="closeNav()">About</a>
+        <a ui-sref="videos" ng-click="closeNav()">Videos</a>
+      </nav>
+    </div>
+    <div ui-view class="view"></div>
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js" charset="utf-8"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="/scripts/ngmap/build/scripts/ng-map.js"></script>
+    <script src="./js/app.js" charset="utf-8"></script>
+    <script src="./js/appCtrl.js" charset="utf-8"></script>
+  </body>
+</html>
